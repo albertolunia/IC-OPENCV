@@ -2,9 +2,10 @@ from ctypes import resize
 import cv2
 from imutils import paths
 import shutil
+import numpy as np
 
+def blur():
 
-def rotaciona():
     Nimg = 0
     
     imagemPath = list(paths.list_images('pos/'))
@@ -12,14 +13,11 @@ def rotaciona():
     Nrot = len(imagemPath)
 
     for z in imagemPath:
-        img = cv2.imread('pos/' + str(Nimg) + '.png')
-        (rows, cols) = img.shape[:2]
-        M = cv2.getRotationMatrix2D((cols / 2, rows / 2), 145, 1)
-        res = cv2.warpAffine(img, M, (cols, rows))
 
-        cv2.imwrite('pos/'+ str(Nrot) + '.png', res)
+        img = cv2.imread('pos/' + str(Nimg) + '.png')
+        filter_blur=cv2.blur(img,ksize=(4,4))
+        cv2.imwrite('pos/'+ str(Nrot) + '.png', filter_blur)
         Nimg += 1
         Nrot += 1
 
-rotaciona()
-
+blur()
