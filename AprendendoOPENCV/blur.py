@@ -15,7 +15,7 @@ def blur():
     for z in imagemPath:
 
         img = cv2.imread('pos/' + str(Nimg) + '.png')
-        filter_blur=cv2.blur(img,ksize=(4,4))
+        filter_blur=cv2.blur(img,ksize=(2,2))
         cv2.imwrite('pos/'+ str(Nrot) + '.png', filter_blur)
         Nimg += 1
         Nrot += 1
