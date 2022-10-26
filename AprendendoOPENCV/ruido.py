@@ -37,4 +37,4 @@ def moire(source, target, angle, distance, offsetx=2, offsety=2):
     imgout.save(target)
 
 
-moire('pos/0.png', 'test/test.png', math.pi / 5, 0, 5, 5)
+moire('pos/0.jpg', 'test/test.png', math.pi / 5, 0, 5, 5)

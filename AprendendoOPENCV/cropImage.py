@@ -3,12 +3,11 @@ import cv2
 from imutils import paths
 import shutil
 
-
 def cropImages():
-    y = 0
-    x = 0
-    h = 24
-    w = 32
+    y = 0 #Altura
+    x = 0 #Largura
+    h = 24 #Tamanho do corte pra cima e pra baixo
+    w = 32 #Tamanho do corte pros lados
     numeroPos = 0
     numeroNeg = 0
     Nimg = 0
@@ -25,9 +24,9 @@ def cropImages():
 
         for i in range(20):
             for j in range(20):
-                if i == 4 and j == 4 or i == 4 and j == 5 or i == 4 and j == 12 or i == 14 and j == 6 or i == 14 and j == 14 or i == 15 and j == 14:
-                    ax1 = y
-                    ax2 = x
+                if i == 4 and j == 4 or i == 4 and j == 13 or i == 14 and j == 6 or i == 15 and j == 15:
+                    ax1 = y #Altura
+                    ax2 = x #Largura
                     croped = resize_image[ax1:ax1 + h, ax2:ax2 + w]
                     cv2.imshow('TESTE', croped)
                     cv2.waitKey(0)
