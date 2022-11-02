@@ -14,7 +14,7 @@ def rotaciona():
     for z in imagemPath:
         img = cv2.imread('pos/' + str(Nimg) + '.png')
         (rows, cols) = img.shape[:2]
-        M = cv2.getRotationMatrix2D((cols / 2, rows / 2), 145, 1)
+        M = cv2.getRotationMatrix2D((cols / 2, rows / 2), 45, 1)
         res = cv2.warpAffine(img, M, (cols, rows))
 
         cv2.imwrite('pos/'+ str(Nrot) + '.png', res)
